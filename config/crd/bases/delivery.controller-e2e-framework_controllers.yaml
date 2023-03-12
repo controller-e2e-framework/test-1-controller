@@ -35,10 +35,20 @@ spec:
           spec:
             description: ControllerSpec defines the desired state of Controller
             properties:
-              foo:
-                description: Foo is an example field of Controller. Edit controller_types.go
-                  to remove/update
-                type: string
+              ref:
+                description: Ref defines a reference object this controller can control.
+                properties:
+                  apiVersion:
+                    type: string
+                  kind:
+                    type: string
+                  name:
+                    type: string
+                required:
+                - apiVersion
+                - kind
+                - name
+                type: object
             type: object
           status:
             description: ControllerStatus defines the observed state of Controller

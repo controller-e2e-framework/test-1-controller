@@ -6,7 +6,7 @@ metadata:
   name: manager-role
 rules:
 - apiGroups:
-  - delivery.controller-e2e-framework
+  - .controller-e2e-framework
   resources:
   - controllers
   verbs:

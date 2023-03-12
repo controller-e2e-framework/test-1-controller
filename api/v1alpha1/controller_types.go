@@ -20,23 +20,20 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
-// NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
+// Ref defines a reference object this controller can control.
+type Ref struct {
+	Kind       string `json:"kind"`
+	Name       string `json:"name"`
+	ApiVersion string `json:"apiVersion"`
+}
 
 // ControllerSpec defines the desired state of Controller
 type ControllerSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of Controller. Edit controller_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	Ref *Ref `json:"ref,omitempty"`
 }
 
 // ControllerStatus defines the observed state of Controller
-type ControllerStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-}
+type ControllerStatus struct{}
 
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
