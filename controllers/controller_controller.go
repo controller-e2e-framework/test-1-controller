@@ -97,10 +97,10 @@ func (r *ControllerReconciler) Reconcile(ctx context.Context, req ctrl.Request) 
 	if err != nil {
 		return ctrl.Result{}, err
 	}
+	logger.Info("object found", "object", u)
 
-	// update status
-	status := u.Object["status"].(map[string]any)
-	status["controller"] = true
+	// update label
+	u.SetLabels(map[string]string{"controller-e2e-framework.controlled": "true"})
 
 	if err := patchHelper.Patch(ctx, u); err != nil {
 		return ctrl.Result{}, err
