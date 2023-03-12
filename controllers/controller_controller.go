@@ -39,6 +39,7 @@ type ControllerReconciler struct {
 	Scheme *runtime.Scheme
 }
 
+//+kubebuilder:rbac:groups=delivery.controller-e2e-framework,resources=controllers,verbs=get;list;watch;create;update;patch;delete
 //+kubebuilder:rbac:groups=delivery.controller-e2e-framework,resources=controllers/status,verbs=get;update;patch
 //+kubebuilder:rbac:groups=delivery.controller-e2e-framework,resources=controllers/finalizers,verbs=update
 
