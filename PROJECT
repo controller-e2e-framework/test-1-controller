@@ -7,4 +7,14 @@ layout:
 - go.kubebuilder.io/v3
 projectName: test-1-controller
 repo: github.com/controller-e2e-framework/test-1-controller
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: controller-e2e-framework
+  group: delivery
+  kind: Controller
+  path: github.com/controller-e2e-framework/test-1-controller/api/v1alpha1
+  version: v1alpha1
 version: "3"

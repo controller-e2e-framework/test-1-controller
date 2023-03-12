@@ -1,0 +1,27 @@
+# permissions for end users to view controllers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: controller-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: test-1-controller
+    app.kubernetes.io/part-of: test-1-controller
+    app.kubernetes.io/managed-by: kustomize
+  name: controller-viewer-role
+rules:
+- apiGroups:
+  - delivery.controller-e2e-framework
+  resources:
+  - controllers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - delivery.controller-e2e-framework
+  resources:
+  - controllers/status
+  verbs:
+  - get

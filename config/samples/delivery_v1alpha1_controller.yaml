@@ -1,0 +1,12 @@
+apiVersion: delivery.controller-e2e-framework/v1alpha1
+kind: Controller
+metadata:
+  labels:
+    app.kubernetes.io/name: controller
+    app.kubernetes.io/instance: controller-sample
+    app.kubernetes.io/part-of: test-1-controller
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: test-1-controller
+  name: controller-sample
+spec:
+  # TODO(user): Add fields here

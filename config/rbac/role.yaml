@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - delivery.controller-e2e-framework
+  resources:
+  - controllers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - delivery.controller-e2e-framework
+  resources:
+  - controllers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - delivery.controller-e2e-framework
+  resources:
+  - controllers/status
+  verbs:
+  - get
+  - patch
+  - update
