@@ -31,3 +31,15 @@ rules:
   - get
   - patch
   - update
+- apiGroups:
+  - delivery.controller-e2e-framework
+  resources:
+  - responders
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
